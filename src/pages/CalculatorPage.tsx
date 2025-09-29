@@ -27,7 +27,7 @@ export type CalculatorState = {
 
 const initial: CalculatorState = {
   dpcValue: 0,
-  dpcScores: {}, // 🚫 no prefill, user adds rows
+  dpcScores: {},
   ei: 0,
   cb: 0,
 };
