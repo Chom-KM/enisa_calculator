@@ -1,0 +1,62 @@
+/* src/styles/Controls.module.css */
+
+/* Base button */
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    transform 0.1s;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  color: black;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #10b981;
+  color: white;
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.primary {
+  background-color: #10b981;
+  border-color: #10b981;
+  color: #fff;
+}
+
+.primary:hover:not(:disabled) {
+  background-color: #059669;
+}
+
+/* Select dropdown */
+.select {
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.875rem;
+  background-color: #fff;
+  color: #111827;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.select:disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+}

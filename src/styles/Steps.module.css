@@ -1,0 +1,101 @@
+/* Shared table styles (same as th, td, tf in TSX) */
+.table {
+    width: 100%;
+}
+
+.table th {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  font-size: 1.2rem;
+}
+
+.table td {
+  border-bottom: 1px solid #eee;
+  padding: 8px;
+}
+
+.table tfoot td {
+  border-top: 2px solid #ccc;
+  padding: 8px;
+  text-align: right;
+}
+
+.stepH2 {
+    margin-bottom: 3rem;
+}
+
+/* Blue underline "hint" link */
+.hintLink {
+  background: none;
+  border: none;
+  padding-left: 1rem;
+  margin: 0;
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.hintLink:disabled {
+  color: #9ca3af;       /* gray-400 */
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+/* Light info box shown under a row */
+.hintBox {
+  background: #eff6ff;           /* blue-50 */
+  border: 1px solid #bfdbfe;     /* blue-200 */
+  border-radius: 8px;
+  padding: 10px;
+  color: #1e3a8a;                /* blue-900 */
+  font-size: 13px;
+}
+
+.hintBox ul {
+  margin: 0;
+  padding-left: 1.2em;
+  text-align: left;
+}
+
+.hintBox li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+
+
+.severityBox {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+}
+
+.severityLow {
+  background-color: #16a34a; /* green-600 */
+}
+
+.severityMedium {
+  background-color: #eab308; /* yellow-500 */
+  color: black;
+}
+
+.severityHigh {
+  background-color: #f97316; /* orange-500 */
+}
+
+.severityVeryHigh {
+  background-color: #dc2626; /* red-600 */
+}
+
+.recommendation {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #374151; /* gray-700 */
+}

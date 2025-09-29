@@ -1,0 +1,52 @@
+/* src/styles/Stepper.module.css */
+
+.stepper {
+  display: flex;
+  justify-content: center; /* keep it centered */
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  gap: 2rem; /* consistent spacing between steps */
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* The circle/index */
+.index {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 50%;
+  border: 2px solid #d1d5db; /* neutral gray border */
+  background-color: #fff;
+  color: #6b7280; /* neutral gray text */
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box; /* prevents width changes */
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+/* Active step */
+.active .index {
+  background-color: #10b981; /* green */
+  border-color: #10b981;
+  color: #fff;
+}
+
+/* Completed step */
+.done .index {
+  background-color: #10b981;
+  border-color: #10b981;
+  color: #fff;
+}
+
+.label {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #374151;
+}

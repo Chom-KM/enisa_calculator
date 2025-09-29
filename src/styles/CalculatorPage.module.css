@@ -1,0 +1,23 @@
+/* CalculatorPage.module.css */
+.page {
+    display: flex;
+    flex-direction: column; /* vertical stacking */
+    align-items: center;    /* horizontal centering */
+    justify-content: center;/* vertical centering (optional if you want full center) */
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;     /* if you want text centered too */
+    /* border: solid black */
+}
+
+.title {
+    border: solid black;
+    border-radius: 1rem;
+    display: inline-flex;
+    margin: 0;
+    margin-left: 5rem;
+    padding: 0.5rem 0.5rem;
+    
+    color: white;
+    background-color: black;
+}

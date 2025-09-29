@@ -1,0 +1,32 @@
+/* Navbar.module.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border: .125rem solid;
+  border-color:#e4e4d0;
+  border-radius: .75rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.logo { 
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+
+.menu { 
+    display: flex;
+    gap: 3rem;
+    font-size: 1.5rem;
+}
+
+.menu a {
+    text-decoration: none; /* remove underline */
+    color: inherit;        /* optional: use parent text color */
+}
+
+.menu a:hover {
+  text-decoration: underline; /* optional: add underline back on hover */
+}

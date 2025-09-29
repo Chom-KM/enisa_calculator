@@ -1,0 +1,27 @@
+:root {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: #ffffeb;
+  font-family: 'Space Grotesk', 'Kanit', sans-serif;
+}
+
+/* A container for your app */
+#root {
+  margin: 0 auto;       /* center horizontally */
+  padding: 1rem;        /* optional spacing */
+  width: 100%;
+  max-width: 1400px;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
