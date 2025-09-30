@@ -14,6 +14,18 @@ const App = () => {
 
   useEffect(() => {
     logPageView(location.pathname + location.search);
+
+    // Set page title based on route
+    switch (location.pathname) {
+      case "/enisa_calculator/":
+        document.title = "ENISA Calculator";
+        break;
+      case "/enisa_calculator/filter":
+        document.title = "DPC Filter Tool";
+        break;
+      default:
+        document.title = "Disclaimer";
+    }
   }, [location]);
 
   return (
