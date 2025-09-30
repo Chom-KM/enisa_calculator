@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../../styles/Steps.module.css";
-import controls from "../../styles/Controls.module.css";
 
 type Props = {
   accepted: boolean;

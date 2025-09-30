@@ -15,7 +15,7 @@ import type { Variants } from "framer-motion";
 
 type ScoreMap = Record<string, number | null>;
 
-type CalculatorState = {
+export type CalculatorState = {
   dpcValue: number;
   dpcScores: ScoreMap;
   ei: number;
