@@ -197,7 +197,7 @@ export default function CalculatorPage() {
                 </div>
                 {!isDPCReady && (
                   <p style={{ marginTop: 8, fontSize: 12, color: "#b91c1c" }}>
-                    โปรดเพิ่มแถวและให้คะแนนทุกแถวก่อนดำเนินการต่อ
+                    โปรดเพิ่มข้อมูลและให้คะแนนทุกแถวก่อนดำเนินการต่อ
                   </p>
                 )}
               </>

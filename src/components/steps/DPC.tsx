@@ -118,97 +118,103 @@ const DPC: FC<Props> = ({ value, scores, onChange, catalog }) => {
 
   return (
     <section>
-      <div className={styles.stepH2}>
-        <h2>Data Processing Context (DPC)</h2>
+      <div className={styles.stepH2} style={{display:"flex", justifyContent:"center" }}>
+        <h2 style={{ marginRight:5 }}>Data Processing Context (DPC)</h2>
+          <div style={{ alignContent:"center" }}>
+          <button
+          onClick={() => window.open("/enisa_calculator/filter", "_blank", "noopener,noreferrer")}
+          className={controls.button}
+        >ดู DPC ทั่งหมด</button>
+        </div>
       </div>
 
       {/* Add row control */}
       <div style={{ position: "relative", marginBottom: "1rem" }}>
-      <label style={{ fontSize: 13, color: "#374151", display: "block", marginBottom: 6 }}>
-        เพิ่มแถว (พิมพ์เพื่อค้นหา)
-      </label>
+        <label style={{ fontSize: 13, color: "#374151", display: "block", marginBottom: 6 }}>
+          เพิ่มข้อมูล (พิมพ์เพื่อค้นหาข้อมูล)
+        </label>
 
-      <input
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => {
-          // allow clicks on suggestions before closing
-          setTimeout(() => setIsFocused(false), 120);
-        }}
-        placeholder="คลิกเพื่อดูทั้งหมด หรือพิมพ์: ชื่อ-นามสกุล, E-mail, เลขบัตร..."
-        aria-label="ค้นหา property"
-        style={{
-          width: "100%",
-          padding: "8px 10px",
-          borderRadius: 6,
-          border: "1px solid #d1d5db",
-          background: "#fff",
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" && suggestions.length > 0) {
-            e.preventDefault();
-            addRow(suggestions[0].key);
-            setQ("");
-          }
-          if (e.key === "Escape") {
-            (e.target as HTMLInputElement).blur();
-          }
-        }}
-      />
-
-      {isFocused && suggestions.length > 0 && (
-        <ul
+        <input
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => {
+            // allow clicks on suggestions before closing
+            setTimeout(() => setIsFocused(false), 120);
+          }}
+          placeholder="คลิกเพื่อดูทั้งหมด หรือพิมพ์: ชื่อ-นามสกุล, E-mail, เลขบัตร..."
+          aria-label="ค้นหา property"
           style={{
-            position: "absolute",
-            zIndex: 10,
-            top: "100%",
-            left: 0,
-            right: 0,
-            margin: 0,
-            padding: 0,
-            listStyle: "none",
+            width: "100%",
+            padding: "8px 10px",
+            borderRadius: 6,
+            border: "1px solid #d1d5db",
             background: "#fff",
-            border: "1px solid #e5e7eb",
-            borderRadius: 8,
-            overflow: "hidden",
-            maxHeight: 280,
-            overflowY: "auto",
-            boxShadow:
-              "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
           }}
-          onMouseDown={(e) => {
-            // prevent blur before click finishes
-            e.preventDefault();
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && suggestions.length > 0) {
+              e.preventDefault();
+              addRow(suggestions[0].key);
+              setQ("");
+            }
+            if (e.key === "Escape") {
+              (e.target as HTMLInputElement).blur();
+            }
           }}
-        >
-          {suggestions.map((sug) => (
-            <li key={sug.key}>
-              <button
-                type="button"
-                className={controls.button}
-                style={{
-                  width: "100%",
-                  textAlign: "left",
-                  border: "none",
-                  borderRadius: 0,
-                  display: "block",
-                }}
-                onClick={() => {
-                  addRow(sug.key);
-                  setQ("");
-                  // keep open to add multiple quickly; comment next line if you prefer it to close
-                  // setIsFocused(false);
-                }}
-              >
-                {sug.label}
-                <span style={{ color: "#6b7280" }}> · {labelForCategory(sug.category)}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+        />
+
+        {isFocused && suggestions.length > 0 && (
+          <ul
+            style={{
+              position: "absolute",
+              zIndex: 10,
+              top: "100%",
+              left: 0,
+              right: 0,
+              margin: 0,
+              padding: 0,
+              listStyle: "none",
+              background: "#fff",
+              border: "1px solid #e5e7eb",
+              borderRadius: 8,
+              overflow: "hidden",
+              maxHeight: 280,
+              overflowY: "auto",
+              boxShadow:
+                "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+            }}
+            onMouseDown={(e) => {
+              // prevent blur before click finishes
+              e.preventDefault();
+            }}
+          >
+            {suggestions.map((sug) => (
+              <li key={sug.key}>
+                <button
+                  type="button"
+                  className={controls.button}
+                  style={{
+                    width: "100%",
+                    textAlign: "left",
+                    border: "none",
+                    borderRadius: 0,
+                    display: "block",
+                  }}
+                  onClick={() => {
+                    addRow(sug.key);
+                    setQ("");
+                    // keep open to add multiple quickly; comment next line if you prefer it to close
+                    // setIsFocused(false);
+                  }}
+                >
+                  {sug.label}
+                  <span style={{ color: "#6b7280" }}> · {labelForCategory(sug.category)}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
 
       {/* Table */}
       {selectedRows.length > 0 ? (
@@ -305,7 +311,7 @@ const DPC: FC<Props> = ({ value, scores, onChange, catalog }) => {
         </>
       ) : (
         <p style={{ color: "#6b7280", fontSize: 14 }}>
-          ยังไม่มีแถวที่เลือก — เพิ่มแถวจากช่องค้นหาด้านบน
+          ยังไม่มีข้อมูลที่เลือก — เพิ่มข้อมูลจากช่องค้นหาด้านบน
         </p>
       )}
     </section>
