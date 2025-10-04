@@ -32,6 +32,10 @@ const Disclaimer: React.FC<Props> = ({ accepted, onChange }) => {
         <p style={{ marginTop: 8 }}>
             This assessment form is based on the Recommendations for a methodology of the assessment of severity of personal data breaches, Working Document, v1.0, December 2013 of the European Union Agency for Network and Information Security (ENISA). Users can learn more at the <a href="https://www.enisa.europa.eu/publications/dbn-severity">Enisa Recommendation</a>.
         </p>
+        <p style={{ marginTop: 10 }}>
+            If you have any questions, please contact:{" "}
+            <a href="mailto:kasamapornchom@gmail.com?subject=Enisa%20Calculator%20Inquiry">kasamapornchom@gmail.com</a>
+        </p>
 
         <label
           style={{
